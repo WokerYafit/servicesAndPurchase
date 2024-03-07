@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טמל - עדכון פרטי לקוח</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="backgroundCustomerPage" id="backgroundCustomerPage">  
+    <img id="banner_services" src="./Images/banner_services.jpg">
+   <img id="tmlLogo" src="./Images/TML_SmallLogo.png">
+    <!-- Navigation Bar -->
+     <nav>
+        <a href="services.html"   class="nav-item">חידושי שירות והורדות</a>
+        <a href="UpdateDetails.html"  class="nav-item active">עדכון פרטי לקוח</a>
+        <a href="index.html" class="nav-item">יציאה</a>
+    </nav>
+    <h1 class="headLines1">עדכון פרטי לקוח</h1>
+    <div class="save">
+    <input type="button" value="שמירה" onclick="sendDesiredCustomerUpdate()" id="updateDetailsSave">    <!--   -->
+      </div> 
+    <div class="updateContent">
+
+<div div="updateCustomerDetails">
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="int" disabled="" id="custDetailsNum"></div>
+        <h5 class="headerfield">מספר לקוח </h5>
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="int" id="custDetailsId"></div>
+        <h5 class="headerfield">מספר מזהה </h5>
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsName"></div>
+        <h5 class="headerfield">שם לקוח </h5>
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsStreet"></div>
+        <h5 class="headerfield">רחוב </h5>  
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsHome"></div>
+        <h5 class="headerfield">מספר בית </h5> 
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsCity"></div>
+        <h5 class="headerfield">עיר </h5>  
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsPob"></div>
+        <h5 class="headerfield">ת.ד </h5>  
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="int" id="custDetailsZip"></div>
+        <h5 class="headerfield">מיקוד </h5>  
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="tel" id="custDetailsPhone"></div>
+        <h5 class="headerfield">טלפון </h5>  
+        </div>
+     <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="var" id="custDetailsEmail"></div>
+        <h5 class="headerfield">אימייל </h5>  
+        </div>
+    <div class="updateField">
+        <div class="inputDetails" id="inputDetails"><input type="password" id="custDetailsPass"></div>
+        <h5 class="headerfield">סיסמא </h5>  
+        </div>
+        </div> 
+    </div>
+    <div class="popup" id="popup">
+         <img src="./Images/DetailsSaved.png">
+         <h5>הפרטים עודכנו בהצלחה</h5>
+         <button type="button" onclick="closePopup()">אישור</button>
+    </div>
+  </div>
+<script src="UpdateDetails.js"></script>
+ </body>
+</html>

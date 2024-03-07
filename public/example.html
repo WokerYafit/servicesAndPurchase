@@ -1,0 +1,28 @@
+<table border='1' width='100%' itemspacing='0' datasrc=#tablelist id="myTable">	
+    <tr>		
+        <td style="width: 55px"><input type="checkbox" onclick="getinfo(this)" id="chk1"/></td>
+        		<td><b><div datafld="name"></div></b></td>		
+                <td><div datafld="created"></div></td>		
+                <td><div datafld="last logon"></div></td>	</tr>	
+                <tr>		
+                    <td style="width: 55px"><input type="checkbox" onclick="getinfo(this)" id="chk1"/></td>		
+                    <td><b><div datafld="name"></div></b></td>		
+                    <td><div datafld="created"></div></td>		
+                    <td><div datafld="last logon"></div></td>	</tr>	
+                <tr>		
+                    <td style="width: 55px"><input type="checkbox" onclick="getinfo(this)" id="chk1"/></td>
+                    <td><b><div datafld="name"></div></b></td>		
+                    <td><div datafld="created"></div></td>		
+                    <td><div datafld="last logon"></div></td>	</tr>	
+                <tr>		
+                    <td style="width: 55px"><input type="checkbox" onclick="getinfo(this)" id="chk1"/></td>
+                    <td><b><div datafld="name"></div></b></td>		
+                    <td><div datafld="created"></div></td>		
+                    <td><div datafld="last logon"></div></td>	</tr>
+                </table>
+                <script>	
+                function getinfo(item)	
+                {		while (item.tagName != "TR")		
+                {			item = item.parentNode		}		
+                alert(item.rowIndex)	}
+                </script>

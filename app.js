@@ -46,16 +46,14 @@ app.post("/CustomerUpdate",async (req,res)=>{
 
 app.use(express.static('public'));
 //======================================================
-
-/*
-app.push("/services.html", (req,res)=>{
-    console.log(req);
-    var theResults = myRepository.getServices(req,req.body.customerGiven);
+app.post("/PriceForProductAndUnit",async (req,res)=>{
+    console.log(req.body);
+    var theResults = await myRepository.getPriceForProduct(req,req.body.ProductGiven);
    console.log("result is: ",theResults);
     res.json(theResults.recordset); 
 });
 app.use(express.static('public'));
-*/
+
 //==============================================================
 app.listen(3001, function () {
     console.log('My app is listening on port 3001!');

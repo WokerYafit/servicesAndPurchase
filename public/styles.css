@@ -1,0 +1,589 @@
+/* ==================ALL PAGES====================*/
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* *{
+    border: 2px red solid;
+} */
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#banner_services{
+    width: 75%;
+    border-bottom: 10px;
+ 
+ }
+
+#tmlLogo{
+   padding-left: 1%; 
+   padding-bottom: 5%;
+   width: 23%;
+   border-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    padding: 12px;
+direction: rtl;
+}
+
+.nav-item {
+    color: hwb(257 15% 16%);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.nav-item.active {
+   text-decoration: underline;
+   text-underline-position: below;   
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.services {
+    display: flex; 
+    justify-content: space-between;
+   /*  gap: 15px; 
+     *border: 2px  blue solid; 
+   */
+    list-style:none;
+    padding: 0.4%;
+    margin: 0;
+    max-width: 600px; 
+    direction: rtl;
+}
+.services >div{
+
+width: 50%;
+text-align: right;
+margin: 0;
+direction: rtl;
+padding-left: 15%;
+
+} 
+#displayDataFromDatabase{
+    display: table;
+    text-align: right ;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 20%;
+    width: 60%;
+}
+/* ==================index.html====================*/
+
+.header5{
+    color: darkblue;
+    margin-left: 10px;
+    padding: auto;
+}
+
+.customerNum{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+    direction:rtl;
+    padding-right: 0%;
+    color: darkblue;
+    width: 500px
+}
+
+.customerNum input{
+    width: 100px;
+    height: 20px;
+    margin-left: 10px;
+    text-align: right;
+    padding-left:10px ;
+    padding-right:10px ;
+}
+.imgProducts{
+    border-radius: 50%;
+}
+.enter{
+    width: auto;
+    height: 11px;
+    padding-bottom: 20px;
+}
+.enter input{
+    color: aliceblue;
+    background-color: midnightblue;
+    width: 100px;
+    text-align: center;
+
+}
+.tofes{
+    background-color: rgb(255, 250, 250);
+
+}
+.headLines{
+    color: rgb(66, 66, 169);
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: lighter;
+    padding-right: 35px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+#mainDiv{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8%;
+    justify-content:space-evenly; 
+}
+
+.programsGalery img{
+    padding: 5%;
+    width: 200px;
+   border-radius: 50%;
+}
+.programsGalery h3{
+    padding: 2%;
+    text-align: center;
+    color: darkblue;
+}
+.programsGalery p{
+    font-size: small;
+    text-align: right;
+    color: black;
+    width: 200px;
+    border: 200px;
+    padding-right: 30px;
+    padding-bottom: 20%;
+}
+
+
+/* ==================services.html====================*/
+.content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.customerHeader{
+    display: flex;
+    direction: rtl;
+justify-content: space-between 5px;
+padding-bottom: 20px;
+}
+#displayCustNum{
+text-align: right;
+padding-left: 5%;
+}
+.customerHeader h4{
+padding-left: 5px;
+padding-right: 5%;
+}
+        
+table{
+color: darkblue;
+width: 80%px;
+direction: rtl;
+border-bottom: 1;
+
+
+}
+
+table.row{
+width: 10px;
+border: 1px darkblue;
+}
+.servicesTable{
+padding-right: 5%;
+direction: rtl;
+
+}
+.checkbox{
+    padding-right:15px ;
+}
+
+.imgDownloadButton{
+justify-items: center ;
+padding-right: 15px;
+
+}
+#displayModulName{
+    padding-right: 10px;
+}
+#displaypriceForUnit{
+    padding-right: 10px;
+}
+#displayAmount{
+    padding-right: 10px;
+}
+#displayvatPerentage{
+    padding-right: 10px;
+}
+#displayStartService{
+    padding-right: 10px;
+}
+#displayEndOfService{
+    padding-right: 10px;
+    direction:ltr ;
+    justify-content: left;
+    text-align: left;
+}
+/*
+
+*/
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+
+
+.totalAmount{
+    justify-content: space-between 20px;
+    direction:rtl;
+    padding-right: 620px;
+    padding-left: 5px;
+    color: darkblue;
+    ;
+    
+  
+}
+
+.totalAmount input{
+    width: 92px;
+    height: 20px;
+    margin-left: 10px;
+    text-align: center;
+    padding-left:10px ;
+    padding-right:10px ;
+    color: darkblue ;
+}
+    
+.moveToPayment{
+    justify-content: space-between 20px;
+    direction:rtl;
+    padding-right: 692px;;
+    color: darkblue;
+    
+}
+
+.moveToPayment input{
+    color: aliceblue;
+    background-color: midnightblue;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    width: 183px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 100px;
+
+}
+.updatePaymentDetails{
+    width: 420px;
+    justify-content: right;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 5px;
+    padding-left: 10%;
+    direction: rtl;
+
+}
+.updatePaymentDetails input{
+    text-align: center;
+    width: 150px;
+    height: 25px;
+    display: flex;
+    direction: rtl;
+
+}
+
+.validationDate{
+    display: flex;
+    width: 150px;
+    height: 25px;
+    justify-content: space-between;
+
+}
+.paymentHeader{
+    justify-content: space-between 5px ;
+    text-align: right;
+    width: 180px;
+    display: flex;
+    direction: rtl;
+    justify-content: right;
+}
+
+.paymentHD{
+    color: darkblue;
+    padding-top: 10px;
+    padding-bottom: 20px;    
+}
+.paymentHeader input{
+    text-align: right;
+    width: 100px;
+    display: flex;
+    direction: rtl;
+box-sizing: 100px;
+}
+
+.paymentPopup{
+    width: 450px;
+    height: 330px;
+    text-align: right;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 420px;
+    left: 200px;
+    transform: translate(-25%,-25%);
+    text-align: center;
+    color: #333;
+    visibility: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    padding-bottom: 20%;
+    box-sizing: inherit;
+    
+}
+.open-paymentPopup{
+   visibility: visible;
+}
+.paymentPopup img{
+width: 50px;
+
+border-radius: 50%;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.paymentPopup h5{
+ font-size: 15px;
+ font-weight: 500;
+ margin: 5px 0 10px;
+        }
+.paymentPopup button{
+    width: 229px;
+    height: 30px;
+    margin-top: 6%;
+    margin-left: auto;
+    padding: 0px 0;
+   color: aliceblue;
+   background: midnightblue;
+
+        }
+.no input{
+    border: #fff;
+    width: 60px;
+    justify-content: center;
+    text-align: center;
+}
+/* ==================UpdateDetails.html====================*/
+.updateNavigator{
+ max-width: 600px;
+ box-sizing: content-box;
+ padding-left: 50%;
+}
+
+#updateNavigator{
+direction: rtl;
+
+}
+
+.updateContent {
+    
+    margin: 0 auto;
+    padding-left: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+
+  
+}
+.headLines1{
+    color: rgb(66, 66, 169);
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: lighter;
+    padding-right: 35px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.updateField{
+    display: flex;
+    padding-top: 10px;
+    text-align: right;
+    justify-content:right; 
+    justify-content:space-between; 
+    padding-left: 60%;
+    padding-right: 50px;
+   
+}
+.updateField input{
+    text-align: right;
+    direction: rtl;
+    width: 200px;
+    padding-left: 3%;
+}
+
+.headerfield{
+    justify-content: right;
+    color: darkblue;
+}
+
+
+.save{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-left: 3%;
+    padding-right: 0%;
+
+ 
+}
+
+.save input{
+    color: aliceblue;
+    background-color: midnightblue;
+    text-align: center;
+     padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: right;
+    justify-content: center;
+    width: 100px;
+}
+.popup{
+         width: 250px;
+         height: 120px;
+         background: #fff;
+         border-radius: 6px;
+         position: absolute;
+         top: 80%;
+         left: 50%;
+         transform: translate(-25%,-25%);
+         text-align: center;
+         padding: 0 30px 30px;
+         color: #333;
+         visibility: hidden;
+         box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    }
+    .open-popup{
+        visibility: visible;
+    }
+    .popup img{
+width: 50px;
+margin-top: -20px;
+border-radius: 50%;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .popup h5{
+     font-size: 15px;
+     font-weight: 500;
+     margin: 5px 0 10px;
+            }
+    .popup button{
+        width: 30%;
+        height: 27%;
+        margin-top: 20px;
+        padding: 0px 0;
+       color: aliceblue;
+       background: midnightblue;
+
+            }
+.backgroundCustomerPage{
+    background: #fff;
+}
+  .backgroundPopupOpen{
+background: rgb(255, 255, 255);
+display: block;
+
+    }
+    .inputDetails input{
+        background: #fff;
+    }
+
+.backgroundPopupOpen{
+background: rgb(255, 255, 255);
+display: block;
+
+  }
+    
+
+  .servicePopup{
+    width: 380px;
+    height: 320px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-25%,-25%);
+    text-align: center;
+    padding: 0 30px 0px;
+    color: #333;
+    visibility: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+}
+.open-servicePopup{
+   visibility: visible;
+}
+
+.servicePopup h5{
+font-size: 15px;
+font-weight: 500;
+margin: 5px 0 10px;
+       }
+.servicePopup button{
+   width: 100px;
+   height: 25px;
+   margin-top: 20px;
+   padding: 0px 0;
+  color: aliceblue;
+  background: midnightblue;
+
+       }
+
+.serviceHeader{
+    padding-left: 7%;
+
+}
+
+.serviceField{
+    display: flex;
+    padding-top: 10px;
+    text-align: right;
+    justify-content:right; 
+    justify-content:space-between; 
+    padding-left: 30px;
+    direction: rtl;
+    width: 270px;
+
+}
+.serviceField input{
+    text-align: right;
+    direction: rtl;
+    width: 150px;
+    height: 20px;
+    padding-left: 3%;
+}
+.servicePopupButton{
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+    padding-top: 5%;
+
+}
+
+.serviceField select{
+    text-align: right;
+    direction: rtl;
+    width: 150px;
+    height: 20px;
+    padding-left: 3%;
+}
