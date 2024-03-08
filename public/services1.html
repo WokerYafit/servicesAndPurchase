@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טמל - חידושי שירות והורדות</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     
+    <img id="banner_services" src="./Images/banner_services.jpg">
+   <img id="tmlLogo" src="./Images/TML_SmallLogo.png">
+    <!-- Navigation Bar -->
+     <nav>
+        <a href="services.html" class="nav-item active">חידושי שירות והורדות</a>
+        <a href="UpdateDetails.html" class="nav-item" id="updatelLightBox">עדכון פרטי לקוח</a>
+        <a href="index.html" class="nav-item ">יציאה</a>
+    </nav>
+ <!-- Page Content -->
+ <div class="content1">
+    <h1 class="headLines">חידושי שירות והורדות</h1>
+     <div class="customerHeader">
+        <h4>שם לקוח</h4>  
+        <div id="displayName"></div>
+        <h4>מספר לקוח</h4>
+        <div id="displayCustNum" ></div>
+        <h4>מספר מזהה</h4>
+        <div id="displayCustId"></div>
+     </div>
+
+<!--================== Services Table========================== -->
+    <div class="servicesTable">
+    <table border="1" cellspacing="0" width="800px">
+        <thead>
+        <tr>
+            <th  width="40px" align="center"><input type="checkbox"></th>
+            <th  hidden width="80px" align="right">מספר מוצר</th>
+            <th width="110px">שם מוצר</th>
+            <th width="110px">מחיר ליחידה</th>
+            <th width="70px">נרכש</th>
+            <th width="70px"align="center">%מעמ</th>
+            <th width="110px">תחילת שירות</th>
+            <th width="110px">סיום שירות</th>
+            <th width="80px">הורדת עדכון</th>
+            <th width="80px">סכום לחידוש </th>
+            <th width="110px" hidden>מספר מוצר</th>
+            <th width="80px" hidden>שם מוצר </th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr[0]>
+           <td><div class="checkbox"><input id="serviceCheckbox" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+            <td hidden align="center"><div class="no"><input  type="int"></div></td> 
+            <td><div class="no"><input id="displayModulName" type="var"></div></td> 
+            <td><div class="no"><input id="displaypriceForUnit" type="int"></div></td> 
+            <td><div class="no"><input id="displayAmount" type="int"></div></td> 
+            <td width="50px" align="center"><div class="no"><input id="displayvatPerentage" type="int"></div></td> 
+            <td><div class="no"><input id="displayStartService" type="txt"></div></td> 
+            <td><div class="no"><input id="displayEndOfService" type="txt"></div></td> 
+            <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg"  onclick="/Images/downloadClicked.jpg"></div></td>
+            <td><div class="no"><input id="serviceSum" type="int"></div></td>  
+            <td hidden><div class="no"><input id="displayProductNum" type="int"></div></td> 
+            <td hidden><div class="no"><input id="displayProductName" type="var"></div></td> 
+        </tr>
+        <tr[1]>
+           <td><div class="checkbox"><input id="serviceCheckbox1" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+            <td hidden align="center"><div class="no"><input id="displayModulNum1" type="int"></div></td> 
+            <td><div class="no"><input id="displayModulName1" type="var"></div></td> 
+            <td><div class="no"><input id="displaypriceForUnit1" type="int"></div></td> 
+            <td><div class="no"><input id="displayAmount1" type="int"></div></td> 
+            <td width="50px" align="center"><div class="no"><input id="displayvatPerentage1" type="int"></div></td> 
+            <td><div class="no"><input id="displayStartService1" type="txt"></div></td> 
+            <td><div class="no"><input id="displayEndOfService1" type="txt"></div></td> 
+            <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton1" onclick="/Images/downloadClicked.jpg"></div></td>
+            <td><div class="no"><input id="serviceSum1" type="int"></div></td>  
+            <td hidden><div class="no"><input id="displayProductNum1" type="int"></div></td> 
+            <td hidden><div class="no"><input id="displayProductName1" type="var"></div></td> 
+        </tr>
+
+        <tr[2]>
+           <td><div class="checkbox"><input id="serviceCheckbox2" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+            <td hidden align="center"><div class="no"><input id="displayModulNum2" type="int"></div></td> 
+            <td><div class="no"><input id="displayModulName2" type="var"></div></td> 
+            <td><div class="no"><input id="displaypriceForUnit2" type="int"></div></td> 
+            <td><div class="no"><input id="displayAmount2" type="int"></div></td> 
+            <td width="50px" align="center"><div class="no"><input id="displayvatPerentage2" type="int"></div></td> 
+            <td><div class="no"><input id="displayStartService2" type="txt"></div></td> 
+            <td><div class="no"><input id="displayEndOfService2" type="txt"></div></td> 
+            <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton2" onclick="/Images/downloadClicked.jpg"></div></td>
+            <td><div class="no"><input id="serviceSum2" type="int"></div></td>  
+            <td hidden><div class="no"><input id="displayProductNum2" type="int"></div></td> 
+            <td hidden><div class="no"><input id="displayProductName2" type="var"></div></td> 
+        </tr>
+
+        <tr[3]>
+            <td><div class="checkbox"><input id="serviceCheckbox3" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+             <td hidden align="center"><div class="no"><input id="displayModulNum3" type="int"></div></td> 
+             <td><div class="no"><input id="displayModulName3" type="var"></div></td> 
+             <td><div class="no"><input id="displaypriceForUnit3" type="int"></div></td> 
+             <td><div class="no"><input id="displayAmount3" type="int"></div></td> 
+             <td width="50px" align="center"><div class="no"><input id="displayvatPerentage3" type="int"></div></td> 
+             <td><div class="no"><input id="displayStartService3" type="txt"></div></td> 
+             <td><div class="no"><input id="displayEndOfService3" type="txt"></div></td> 
+             <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton3" onclick="/Images/downloadClicked.jpg"></div></td>
+             <td><div class="no"><input id="serviceSum3" type="int"></div></td>  
+             <td hidden><div class="no"><input id="displayProductNum3" type="int"></div></td> 
+             <td hidden><div class="no"><input id="displayProductName3" type="var"></div></td> 
+         </tr>
+
+         <tr[4]>
+            <td><div class="checkbox"><input id="serviceCheckbox4" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+             <td hidden align="center"><div class="no"><input id="displayModulNum4" type="int"></div></td> 
+             <td><div class="no"><input id="displayModulName4" type="var"></div></td> 
+             <td><div class="no"><input id="displaypriceForUnit4" type="int"></div></td> 
+             <td><div class="no"><input id="displayAmount4" type="int"></div></td> 
+             <td width="50px" align="center"><div class="no"><input id="displayvatPerentage4" type="int"></div></td> 
+             <td><div class="no"><input id="displayStartService4" type="txt"></div></td> 
+             <td><div class="no"><input id="displayEndOfService4" type="txt"></div></td> 
+             <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton4" onclick="/Images/downloadClicked.jpg"></div></td>
+             <td><div class="no"><input id="serviceSum4" type="int"></div></td>  
+             <td hidden><div class="no"><input id="displayProductNum4" type="int"></div></td> 
+             <td hidden><div class="no"><input id="displayProductName4" type="var"></div></td> 
+         </tr>
+
+         <tr[5]>
+            <td><div class="checkbox"><input id="serviceCheckbox5" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+             <td hidden align="center"><div class="no"><input id="displayModulNum5" type="int"></div></td> 
+             <td><div class="no"><input id="displayModulName5" type="var"></div></td> 
+             <td><div class="no"><input id="displaypriceForUnit5" type="int"></div></td> 
+             <td><div class="no"><input id="displayAmount5" type="int"></div></td> 
+             <td width="50px" align="center"><div class="no"><input id="displayvatPerentage5" type="int"></div></td> 
+             <td><div class="no"><input id="displayStartService5" type="txt"></div></td> 
+             <td><div class="no"><input id="displayEndOfService5" type="txt"></div></td> 
+             <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton5" onclick="/Images/downloadClicked.jpg"></div></td>
+             <td><div class="no"><input id="serviceSum5" type="int"></div></td>  
+             <td hidden><div class="no"><input id="displayProductNum5" type="int"></div></td> 
+             <td hidden><div class="no"><input id="displayProductName5" type="var"></div></td> 
+         </tr>
+         <tr[6]>
+            <td><div class="checkbox"><input id="serviceCheckbox6" type="checkbox" onclick="openRenewServicePopup()"></div></td>
+             <td hidden align="center"><div class="no"><input id="displayModulNum6" type="int"></div></td> 
+             <td><div class="no"><input id="displayModulName6" type="var"></div></td> 
+             <td><div class="no"><input id="displaypriceForUnit6" type="int"></div></td> 
+             <td><div class="no"><input id="displayAmount6" type="int"></div></td> 
+             <td width="50px" align="center"><div class="no"><input id="displayvatPerentage6" type="int"></div></td> 
+             <td><div class="no"><input id="displayStartService6" type="txt"></div></td> 
+             <td><div class="no"><input id="displayEndOfService6" type="txt"></div></td> 
+             <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg" id="imgDownloadButton6" onclick="/Images/downloadClicked.jpg"></div></td>
+             <td><div class="no"><input id="serviceSum6" type="int"></div></td>  
+             <td hidden><div class="no"><input id="displayProductNum6" type="int"></div></td> 
+             <td hidden><div class="no"><input id="displayProductName6" type="var"></div></td> 
+         </tr>
+    </tbody>
+    </table>
+    <div id="totalAmount"  class="totalAmount">
+        סכום לתשלום        <input type="text" >
+    </div>
+</div>
+
+
+
+
+
+<!--=======Renew Service Popup=========================================-->
+
+<div class="servicePopup" id="servicePopup">
+    <div class="serviceField">
+    <div id="displayProductName"></div>
+    <div id="displayProductNum" hidden></div>
+    <div id="displayModulnum" hidden></div>
+</div>
+    <div class="serviceField">
+    <h5 class="serviceHeader" id="unitName">יחידת מדד</h5>
+    <div class="serviceInput">       
+<select name="unit" >
+ <option name="unitNum" value="1">ינואר</option>
+</select>
+</div>
+</div>
+    <div class="serviceField">
+        <h5 class="serviceHeader" value="">מחיר ליחידה</h5> 
+        <input id="unitSum" class="serviceInput" type="text" name="unitSum" disabled value="500">
+     </div>
+     <div class="serviceField">
+        <h5 class="serviceHeader">כמות</h5> 
+        <input id="amount" class="serviceInput" type="int" name="amount" value="20">
+     </div>
+     <div class="servicePopupButton">
+        <button type="button" onclick="openRenewServicePopupClose()">ביטול</button>
+        <button  type="button" onclick="sendRenewService()">אישור</button>
+</div>
+</div>
+
+
+
+<!--=========================Payment Popup =============================-->
+<div class="moveToPayment"><input type="button" value="מעבר לתשלום" onclick="PaymentDetailsPopup()"></div>
+<div class="paymentPopup" id="paymentPopup">
+    <h2 class="paymentHD" >פרטי תשלום</h2>
+    <div class="updatePaymentDetails">
+       <h5 class="paymentHeader">שם בעל/ת הכרטיס</h5> 
+       <input class="paymentInput" type="text" id="csName">
+    </div>
+
+    <div class="updatePaymentDetails">
+        <h5 class="paymentHeader">מספר זהות  בעל/ת הכרטיס</h5> 
+        <input class="paymentInput" type="text" name="id">
+     </div>
+
+     <div class="updatePaymentDetails">
+        <h5 class="paymentHeader">מספר הכרטיס</h5> 
+        <input class="paymentInput" type="password" name="cardNumber">
+     </div>
+
+     <div class="updatePaymentDetails">
+       <h5 class="paymentHeader">תוקף כרטיס</h5> 
+       <div class="validationDate">
+        <select name="yearValidation" name="yearValidation">
+        <option value="1">2024</option>
+        <option value="2">2025</option>
+        <option value="3">2026</option>
+        <option value="4">2027</option>
+        <option value="5">2028</option>
+        <option value="6">2029</option>
+        <option value="7">2030</option>
+        <option value="8">2031</option>
+       </select>
+       <H5>/</H5>
+       <select name="monthValidation" name="monthValidation" >
+        <option value="1">ינואר</option>
+        <option value="2">פברואר</option>
+        <option value="3">מרץ</option>
+        <option value="4">אפריל</option>
+        <option value="5">מאי</option>
+        <option value="6">יוני</option>
+        <option value="7">יולי</option>
+        <option value="8">אוגוסט</option>
+        <option value="9">ספטמבר</option>
+        <option value="10">אוקטובר</option>
+        <option value="11">נובמבר</option>
+        <option value="12">דצמבר</option>
+       </select>
+       
+       </div>
+     </div>
+     <div class="updatePaymentDetails">
+        <h5 class="paymentHeader">CVV</h5> 
+        <input class="paymentInput" type="int" name="cvv">
+     </div>
+    <button type="button" onclick="PaymentDetailsPopupClose()">אישור</button>
+</div>
+</div>
+</div>
+
+
+<!--=======Renew Service Popup=========================================-->
+<div class="servicePopup" id="servicePopup">
+    <div class="serviceField">
+    <div id="displayProductName"></div>
+    <div id="displayProductNum" hidden></div>
+    <div id="displayModulnum" hidden></div>
+</div>
+    <div class="serviceField">
+    <h5 class="serviceHeader" id="unitName">יחידת מדד</h5>
+    <div class="serviceInput">       
+<select name="unit" >
+ <option name="unitNum" value="1">ינואר</option>
+</select>
+</div>
+</div>
+    <div class="serviceField">
+        <h5 class="serviceHeader" value="">מחיר ליחידה</h5> 
+        <input class="serviceInput" type="text" name="unitSum" disabled>
+     </div>
+     <div class="serviceField">
+        <h5 class="serviceHeader">כמות</h5> 
+        <input class="serviceInput" type="int" name="amount">
+     </div>
+     <div class="servicePopupButton">
+        <button type="button" onclick="openRenewServicePopupClose()">ביטול</button>
+        <button  type="button" onclick="sendRenewService()">אישור</button>
+</div>
+</div>
+
+
+
+<!--===============================================================-->
+
+
+<script src="services.js"></script>
+
+</body>
+</html>

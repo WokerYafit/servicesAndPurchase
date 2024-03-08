@@ -36,7 +36,7 @@ function sendServicesAndCustomerDetailsReport()
         for (let i = 0; i < theArr.length; i++) {
             var theResults = theArr[i];
             console.log(theResults);
-    document.querySelector("#displayModulnum").innerHTML +=
+   /* document.querySelector("#displayModulnum").innerHTML +=
     `
     <div class= "column1">   
         <div id=Name> ${theResults.ModulNum}  </div>
@@ -90,10 +90,85 @@ function sendServicesAndCustomerDetailsReport()
     <div class= "column9">   
         <div id=Name> ${theResults.ProductName}  </div>
     </div>
-    `     
+    `     */
         }
-    })
-}
+    var tableData = [theResults];
+
+    function createTable() {
+      var table = document.getElementById("myTable");
+      var columnsInput = document.getElementById("columns");
+      var rowsInput = document.getElementById("rows");
+      var columns = parseInt(columnsInput.value);
+      var rows = parseInt(rowsInput.value);
+
+      // Clear existing table
+      while (table.firstChild) {
+        table.removeChild(table.firstChild);
+      }
+      createTable()
+      // Create table header
+     /* var headerRow = document.createElement("tr");
+      for (var i = 0; i < columns; i++) {
+        var th = document.createElement("th");
+        var input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("class", "header-input");
+        input.setAttribute("placeholder", "Column " + (i + 1));
+        th.appendChild(input);
+        headerRow.appendChild(th);
+      }
+      table.appendChild(headerRow);
+*/
+      // Create table rows
+      for (var i = 0; i < rows; i++) {
+        var rowData = [];
+        var row = document.createElement("tr");
+        for (var j = 0; j < columns; j++) {
+          var cell = document.createElement("td");
+          cell.setAttribute("contenteditable", "true");
+          cell.setAttribute("class", "editable-cell");
+          cell.addEventListener("input", updateCell);
+          rowData.push("");
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+        tableData.push(rowData);
+      }
+    }
+})
+    function updateCell(event) {
+      var rowIndex = event.target.parentNode.rowIndex - 1;
+      var columnIndex = event.target.cellIndex;
+      var value = event.target.textContent.trim();
+      updateData(rowIndex, columnIndex, value);
+    }
+
+    function updateData(row, col, value) {
+      tableData[row][col] = value;
+    }
+
+    function deleteRow(row) {
+      var table = document.getElementById("myTable");
+      table.deleteRow(row);
+      tableData.splice(row, 1);
+    }
+
+    function updateRow(row) {
+      var table = document.getElementById("myTable");
+      var rowData = tableData[row];
+      var cells = table.rows[row + 1].cells;
+      for (var i = 0; i < rowData.length; i++) {
+        var value = cells[i].textContent.trim();
+        rowData[i] = value;
+      }
+    }
+
+    function displayData() {
+      console.log(tableData);
+    }
+        }
+  
+
 
 
 {
@@ -145,31 +220,17 @@ document.querySelector("#displayName").innerHTML +=
    })
 }
 
-//======================paymentPopup=================================
+//===========================================
 let  paymentPopup = document.getElementById("paymentPopup").classList;
 function PaymentDetailsPopup(){
     paymentPopup.add("open-paymentPopup")
 }
+//var email = document.querySelector("[name='custNum']").value;
 function PaymentDetailsPopupClose()
 {paymentPopup.remove("open-paymentPopup")
 
 }
-
-let  ServicePopup = document.getElementById("servicePopup").classList;
-function openRenewServicePopup(){
-    ServicePopup.add("open-servicePopup")
-}
-function openRenewServicePopupClose()
-{ServicePopup.remove("open-servicePopup")
-document.getElementById("serviceCheckbox").checked = false; 
-}
-
-function sendRenewService()
-{ServicePopup.remove("open-servicePopup")
-document.getElementById("serviceCheckbox").checked = false; 
-document.getElementById("serviceSum").value= document.getElementById("unitSum").value * document.getElementById("amount").value ; 
-}
-//======================sendProductForPrice======================
+//===========================================
 function sendProductForPrice()
 {
 var cs = localStorage.getItem("ProductGiven");
@@ -205,6 +266,19 @@ for (let i = 0; i < theArr.length; i++) {
     document.querySelector("[name='sumForUnit']").value=(1+theService.vat)*theService.price
 }
 })
+}
+let  ServicePopup = document.getElementById("servicePopup").classList;
+function openRenewServicePopup(){
+    ServicePopup.add("open-servicePopup")
+}
+function openRenewServicePopupClose()
+{ServicePopup.remove("open-servicePopup")
+document.getElementById("serviceCheckbox").checked = false; 
+}
+
+function sendRenewService()
+{ServicePopup.remove("open-servicePopup")
+document.getElementById("serviceCheckbox").checked = false; 
 }
 
 

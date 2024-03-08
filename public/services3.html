@@ -32,39 +32,10 @@
      </div>
 
 <!--================== Services Table========================== -->
-    <div class="servicesTable">
-    <table border="1" cellspacing="0" width="800px">
-        <tr>
-            <th  width="40px" align="center"><input type="checkbox"></th>
-            <th  hidden width="80px" align="right">מספר מוצר</th>
-            <th width="110px">שם מוצר</th>
-            <th width="110px">מחיר ליחידה</th>
-            <th width="70px">נרכש</th>
-            <th width="70px"align="center">%מעמ</th>
-            <th width="110px">תחילת שירות</th>
-            <th width="110px">סיום שירות</th>
-            <th width="80px">הורדת עדכון</th>
-            <th width="100px" hidden>סכום לתשלום</th>
-            <th width="110px" hidden>מספר לקוח</th>
-            <th width="80px" hidden>שם לקוח </th>
-        </tr>
-        <tr[i]>
-           <td><div class="checkbox"><input id="serviceCheckbox" type="checkbox" onclick="openRenewServicePopup()"></div>&nbsp;</td>
-            <td hidden align="center"><div id="displayModulnum"></div></td>
-            <td ><div id="displayModulName"></div></td>
-            <td><div id="displaypriceForUnit"></div></td>
-            <td><div id="displayAmount"></div></td>
-            <td width="50px" align="center"><div id="displayvatPerentage"></div></td>
-            <td><div id="displayStartService"></div></td>
-            <td><div id="displayEndOfService"></div></td>
-            <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg"  onclick="/Images/downloadClicked.jpg"></div></td>
-            <td hidden><div id="displayProductNum"></div></td>
-            <td hidden><div id="displayProductName"></div></td> 
-            <td ><div class="no"><input id="serviceSum" type="int" disabled></div></td>  
-            <td hidden><div class="no" id="displayProductNum"></div></td> 
-            <td hidden><div class="no"  id="displayProductName" ></div></td> 
-        </tr>
-    </table>
+    
+
+<div id="displayDataFromDatabase">   </div>
+    <div class="oneRowUsers">   </div>
     <div id="totalAmount"  class="totalAmount">
         סכום לתשלום        <input type="text" disabled>
     </div>

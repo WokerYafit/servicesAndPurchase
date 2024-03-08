@@ -204,6 +204,13 @@ document.getElementById("serviceCheckbox").checked = false;
 function sendRenewService()
 {ServicePopup.remove("open-servicePopup")
 document.getElementById("serviceCheckbox").checked = false; 
+var table = document.querySelector('table');
+var sum = 0;
+
+for( var i = 1; i < table.rows.length; i++ ){
+    sum = sum + parseFloat( table.rows[ i ].cells[ 1 ].textContent );
+}
+document.getElementById("totalAmount").value = sum.toFixed( 3 );
 }
 
 

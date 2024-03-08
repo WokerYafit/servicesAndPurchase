@@ -33,7 +33,11 @@
 
 <!--================== Services Table========================== -->
     <div class="servicesTable">
-    <table border="1" cellspacing="0" width="800px">
+        <div class="input-container">
+            <input hidden type="number" id="columns" min="1" placeholder="Number of Columns">
+            <input hidden type="number" id="rows" min="1" placeholder="Number of Rows">
+           <!-- <button onclick="createTable()">Create Table</button></div>-->
+    <table border="1" cellspacing="0" width="800px" id="myTable">
         <tr>
             <th  width="40px" align="center"><input type="checkbox"></th>
             <th  hidden width="80px" align="right">מספר מוצר</th>
@@ -44,11 +48,10 @@
             <th width="110px">תחילת שירות</th>
             <th width="110px">סיום שירות</th>
             <th width="80px">הורדת עדכון</th>
-            <th width="100px" hidden>סכום לתשלום</th>
             <th width="110px" hidden>מספר לקוח</th>
             <th width="80px" hidden>שם לקוח </th>
         </tr>
-        <tr[i]>
+       <!--<tr[i]>
            <td><div class="checkbox"><input id="serviceCheckbox" type="checkbox" onclick="openRenewServicePopup()"></div>&nbsp;</td>
             <td hidden align="center"><div id="displayModulnum"></div></td>
             <td ><div id="displayModulName"></div></td>
@@ -60,50 +63,12 @@
             <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg"  onclick="/Images/downloadClicked.jpg"></div></td>
             <td hidden><div id="displayProductNum"></div></td>
             <td hidden><div id="displayProductName"></div></td> 
-            <td ><div class="no"><input id="serviceSum" type="int" disabled></div></td>  
-            <td hidden><div class="no" id="displayProductNum"></div></td> 
-            <td hidden><div class="no"  id="displayProductName" ></div></td> 
-        </tr>
+        </tr>--> 
     </table>
     <div id="totalAmount"  class="totalAmount">
-        סכום לתשלום        <input type="text" disabled>
+        סכום לתשלום        <input type="text">
     </div>
 </div>
-
-
-
-<!--=======Renew Service Popup=========================================-->
-
-<div class="servicePopup" id="servicePopup">
-    <div class="serviceField">
-    <div id="displayProductName"></div>
-    <div id="displayProductNum" hidden></div>
-    <div id="displayModulnum" hidden></div>
-</div>
-    <div class="serviceField">
-    <h5 class="serviceHeader" id="unitName">יחידת מדד</h5>
-    <div class="serviceInput">       
-<select name="unit" >
- <option name="unitNum" value="1">ינואר</option>
-</select>
-</div>
-</div>
-    <div class="serviceField">
-        <h5 class="serviceHeader" value="">מחיר ליחידה</h5> 
-        <input id="unitSum" class="serviceInput" type="text" name="unitSum" disabled value="500">
-     </div>
-     <div class="serviceField">
-        <h5 class="serviceHeader">כמות</h5> 
-        <input id="amount" class="serviceInput" type="int" name="amount" value="20">
-     </div>
-     <div class="servicePopupButton">
-        <button type="button" onclick="openRenewServicePopupClose()">ביטול</button>
-        <button  type="button" onclick="sendRenewService()">אישור</button>
-</div>
-</div>
-
-
-
 
 
 <div class="moveToPayment"><input type="button" value="מעבר לתשלום" onclick="PaymentDetailsPopup()"></div>
@@ -168,17 +133,17 @@
 </div>
 
 
-<!--=======Renew Service Popup=========================================
+<!--=======Renew Service Popup=========================================-->
 <div class="servicePopup" id="servicePopup">
     <div class="serviceField">
     <div id="displayProductName"></div>
     <div id="displayProductNum" hidden></div>
     <div id="displayModulnum" hidden></div>
 </div>
-    <div class="serviceField">
+    <!--<div class="serviceField">
        <h5 class="serviceHeader">מוצר</h5> 
        <input class="serviceInput" type="text" id="productName" disabled>
-       <input class="serviceInput" type="text" id="productNum" hidden>
+       <input class="serviceInput" type="text" id="productNum" hidden>-->
     <div class="serviceField">
     <h5 class="serviceHeader" id="unitName">יחידת מדד</h5>
     <div class="serviceInput">       
@@ -201,7 +166,7 @@
 </div>
 </div>
 
--->
+
 
 <!--===============================================================-->
 

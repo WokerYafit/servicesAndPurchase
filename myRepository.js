@@ -2,9 +2,9 @@ const mssql = require('mssql')
 
 const sqlConfig = {
     user: "sa29",
-    password: "1234",
+    password: "1234Remote",
     database: "ServicesAndPurchase",
-    server: 'localhost', //Server to connect to. You can use 'localhost\instance' to connect to named instance.
+    server: 'tamalservices.database.windows.net', //Server to connect to. You can use 'localhost\instance' to connect to named instance.
     port: 1433, //Port to connect to (default: 1433). Don't set when connecting to named instance.
     pool: {
         max: 10,

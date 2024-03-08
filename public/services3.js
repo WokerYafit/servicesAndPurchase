@@ -36,61 +36,21 @@ function sendServicesAndCustomerDetailsReport()
         for (let i = 0; i < theArr.length; i++) {
             var theResults = theArr[i];
             console.log(theResults);
-    document.querySelector("#displayModulnum").innerHTML +=
-    `
-    <div class= "column1">   
-        <div id=Name> ${theResults.ModulNum}  </div>
-    </div>
-    `    
-    document.querySelector("#displayModulName").innerHTML +=
-    `
-    <div class= "column2">   
-        <div id=Name> ${theResults.Name}  </div>
-    </div>
-    `    
-    document.querySelector("#displaypriceForUnit").innerHTML +=
-    `
-    <div class= "column3">   
-        <div id=Name> ${theResults.priceForUnit}  </div>
-    </div>
-    `    
-    document.querySelector("#displayAmount").innerHTML +=
-    `
-    <div class= "column4">   
-        <div id=Name> ${theResults.amount}  </div>
-    </div>
-    `    
-    document.querySelector("#displayvatPerentage").innerHTML +=
-    `
-    <div class= "column5">   
-        <div id=Name> ${theResults.vatPerentage}  </div>
-    </div>
-    `    
-    document.querySelector("#displayStartService").innerHTML +=
-    `
-    <div class= "column6">   
-        <div id=Name> ${theResults.StartService}  </div>
-    </div>
-    `    
-    document.querySelector("#displayEndOfService").innerHTML +=
-    `
-    <div class= "column7">   
-        <div id=Name> ${theResults.EndOfService}  </div>
-    </div>
-    `    
+            document.querySelector("#displayDataFromDatabase").innerHTML +=
+            `
+      <div class="oneRowUsers">
+               <div > ${theResults.ModulNum} </div>
+                <div> ${theResults.Name} </div>
+                <div> ${theResults.priceForUnit} </div>
+                <div> ${theResults.amount} </div>
+                <div> ${theResults.vatPerentage} </div>
+                <div> ${theResults.StartService} </div>
+                <div> ${theResults.EndOfService} </div>
+                <div> ${theResults.ProductNum} </div>
+                <div${theResults.ProductName} </div>
+            </div>
+            `   
 
-    document.querySelector("#displayProductNum").innerHTML +=
-    `
-    <div class= "column8">   
-        <div id=Name> ${theResults.ProductNum}  </div>
-    </div>
-    `    
-    document.querySelector("#displayProductName").innerHTML +=
-    `
-    <div class= "column9">   
-        <div id=Name> ${theResults.ProductName}  </div>
-    </div>
-    `     
         }
     })
 }
