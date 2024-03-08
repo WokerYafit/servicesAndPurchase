@@ -12,7 +12,7 @@ function doInitilizations()
 window.addEventListener("load",sendServicesAndCustomerDetailsReport)
 function sendServicesAndCustomerDetailsReport()
 {
-    var cs =localStorage.getItem("customerId") ;
+    var cs =localStorage.getItem("customerId")  ;
     console.log("innside send srvc and cstmr dtl reprt, cs=",cs);
 
     var myBody = {

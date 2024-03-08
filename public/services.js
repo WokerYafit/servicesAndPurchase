@@ -36,64 +36,93 @@ function sendServicesAndCustomerDetailsReport()
         for (let i = 0; i < theArr.length; i++) {
             var theResults = theArr[i];
             console.log(theResults);
-    document.querySelector("#displayModulnum").innerHTML +=
-    `
-    <div class= "column1">   
-        <div id=Name> ${theResults.ModulNum}  </div>
-    </div>
-    `    
-    document.querySelector("#displayModulName").innerHTML +=
-    `
-    <div class= "column2">   
-        <div id=Name> ${theResults.Name}  </div>
-    </div>
-    `    
-    document.querySelector("#displaypriceForUnit").innerHTML +=
-    `
-    <div class= "column3">   
-        <div id=Name> ${theResults.priceForUnit}  </div>
-    </div>
-    `    
-    document.querySelector("#displayAmount").innerHTML +=
-    `
-    <div class= "column4">   
-        <div id=Name> ${theResults.amount}  </div>
-    </div>
-    `    
-    document.querySelector("#displayvatPerentage").innerHTML +=
-    `
-    <div class= "column5">   
-        <div id=Name> ${theResults.vatPerentage}  </div>
-    </div>
-    `    
-    document.querySelector("#displayStartService").innerHTML +=
-    `
-    <div class= "column6">   
-        <div id=Name> ${theResults.StartService}  </div>
-    </div>
-    `    
-    document.querySelector("#displayEndOfService").innerHTML +=
-    `
-    <div class= "column7">   
-        <div id=Name> ${theResults.EndOfService}  </div>
-    </div>
-    `    
 
-    document.querySelector("#displayProductNum").innerHTML +=
+
+            let myObj = JSON.stringify(theResults);
+
+            // create new row for our table
+            let oneRowHTMLStr =
+ `<tr class="oneRow">`
+
++
     `
-    <div class= "column8">   
-        <div id=Name> ${theResults.ProductNum}  </div>
-    </div>
+    <td class="column0">   
+       <input type="checkbox" class="serviceCheckbox" id="serviceCheckbox${i+1}"  onclick="openRenewServicePopup(${theResults.ProductName})"/> 
+    </td>
+    ` 
+    +
+    `
+    <td class="column1">   
+        ${theResults.ModulNum} 
+    </td>
     `    
-    document.querySelector("#displayProductName").innerHTML +=
++
     `
-    <div class= "column9">   
-        <div id=Name> ${theResults.ProductName}  </div>
-    </div>
-    `     
+    <td class="column2">   
+     ${theResults.Name}
+    </td>
+    `    
++
+    `
+    <td class="column3">   
+     ${theResults.priceForUnit}
+    </td>
+    `    
+    +
+    `
+    <td class="column4">   
+     ${theResults.amount} 
+    </td>
+    `    
+   +
+    `
+    <td class="column5">   
+     ${theResults.vatPerentage}  
+    </td>
+    `    
++
+    `
+    <td class="column6">   
+     ${theResults.StartService}  
+    </td>
+    `    
++
+    `
+    <td class="column7">   
+     ${theResults.EndOfService} 
+    </td>
+    `    
++
+
+    `
+    <td class="column8">   
+     ${theResults.ProductNum}
+    </td>
+    `    
+ +
+    `
+    <td class="column9">   
+         ${theResults.ProductName} 
+    </td>
+    ` 
+
+    
+    +
+    `
+    <td class="column0">   
+       <input type="int" disable   id="serviceSum${theResults.ModulNum}"/> 
+    </td>
+    ` 
+    +
+    `</tr>`; // closing oneRow td
+    
+    
+    document.querySelector("#table tbody").innerHTML += oneRowHTMLStr;
         }
     })
 }
+
+
 
 
 {
@@ -154,9 +183,12 @@ function PaymentDetailsPopupClose()
 {paymentPopup.remove("open-paymentPopup")
 
 }
+//======================servicePopup=================================
 
 let  ServicePopup = document.getElementById("servicePopup").classList;
-function openRenewServicePopup(){
+function openRenewServicePopup(theData){
+console.log("the data is:",theData);
+document.querySelector("#displayProductName").innerHTML=theData;
     ServicePopup.add("open-servicePopup")
 }
 function openRenewServicePopupClose()
@@ -166,8 +198,10 @@ document.getElementById("serviceCheckbox").checked = false;
 
 function sendRenewService()
 {ServicePopup.remove("open-servicePopup")
-document.getElementById("serviceCheckbox").checked = false; 
-document.getElementById("serviceSum").value= document.getElementById("unitSum").value * document.getElementById("amount").value ; 
+let theCheckBoxId = document.querySelector(".serviceCheckbox:checked").getAttribute("id");
+let whoIsCheckedRowNum = theCheckBoxId.substring(theCheckBoxId.length-1);
+document.querySelector(`#serviceSum${whoIsCheckedRowNum}`).value= document.getElementById("unitSum").value * document.getElementById("amount").value ; 
+document.querySelector(".serviceCheckbox:checked").checked = false; 
 }
 //======================sendProductForPrice======================
 function sendProductForPrice()
