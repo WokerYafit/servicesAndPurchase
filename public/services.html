@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-     
+    <div class="backgroundCustomerPage" id="backgroundCustomerPage"> 
     <img id="banner_services" src="./Images/banner_services.jpg">
    <img id="tmlLogo" src="./Images/TML_SmallLogo.png">
     <!-- Navigation Bar -->
@@ -41,33 +41,18 @@
             <th width="110px">מחיר ליחידה</th>
             <th width="70px">נרכש</th>
             <th width="70px"align="center">%מעמ</th>
+            <th width="70px">סה"כ</th>
             <th width="110px">תחילת שירות</th>
             <th width="110px">סיום שירות</th>
             <th width="80px">הורדת עדכון</th>
-            <th width="100px" hidden>סכום לתשלום</th>
+           <!-- <th width="100px" hidden>סכום לתשלום</th>
             <th width="110px" hidden>מספר לקוח</th>
-            <th width="80px" hidden>שם לקוח </th>
+            <th width="80px" hidden>שם לקוח </th>-->
         </tr>
-        <!--<tr>
-           <td><div class="checkbox"><input id="serviceCheckbox" type="checkbox" onclick="openRenewServicePopup()"></div>&nbsp;</td>
-            <td hidden align="center"><div id="displayModulnum"></div></td>
-            <td ><div id="displayModulName"></div></td>
-            <td><div id="displaypriceForUnit"></div></td>
-            <td><div id="displayAmount"></div></td>
-            <td width="50px" align="center"><div id="displayvatPerentage"></div></td>
-            <td><div id="displayStartService"></div></td>
-            <td><div id="displayEndOfService"></div></td>
-            <td><div class="imgDownloadButton"> <img src="/Images/downloadButton.jpg"  onclick="/Images/downloadClicked.jpg"></div></td>
-            <td hidden><div id="displayProductNum"></div></td>
-            <td hidden><div id="displayProductName"></div></td> 
-            <td ><div class="no"><input id="serviceSum" type="int" disabled></div></td>  
-            <td hidden><div class="no" id="displayProductNum"></div></td> 
-            <td hidden><div class="no"  id="displayProductName" ></div></td> 
-        </tr>-->
     </table>
-    <div id="totalAmount"  class="totalAmount">
-        סכום לתשלום        <input type="text" disabled>
-    </div>
+    <!--<div id="totalAmount"  class="totalAmount">
+        סכום לתשלום        <input type="int" disabled>
+    </div>-->
 </div>
 
 
@@ -76,29 +61,37 @@
 
 <div class="servicePopup" id="servicePopup">
     <div class="serviceField">
-    <div id="displayProductName"></div>
-    <div id="displayProductNum" hidden></div>
+    <h2 class="serviceHD">חידוש מוצר</h2>
+        <div hidden id="displayProductNum" name="displayProductNum"><input type="text" name="displayProductNum" id="displayProductNum"></div>
+    <div id="displayProductName" name="displayProductName"><input type="text" name="displayProductName" id="displayProductName" hidden></div>
+    <div hidden id="displayUnitNum" name="displayUnitNum"><input type="text" name="displayUnitNum" id="displayUnitNum"></div>
+   <!-- <div id="displayUnitNum"></div>-->
     <div id="displayModulnum" hidden></div>
 </div>
     <div class="serviceField">
     <h5 class="serviceHeader" id="unitName">יחידת מדד</h5>
-    <div class="serviceInput">       
-<select name="unit" >
- <option name="unitNum" value="1">ינואר</option>
-</select>
+    <div class="serviceInput">    
+    <select id="unitselects" class="unitselects" name="unitselects" onclick="sendProductForPrice()">
+        <option id="SHKNT" value="1" selected>רשת(10 עמדות)</option>
+        <option id="PENSIA" value="2">עובדים</option>
+        <option id="SHKNT2" value="3">עמדה בודדת</option>
+        <option id="HISHULIT" value="4">עוסקים</option>
+        <option id="ASHAFIT" value="5">חשבוניות</option>>
+        <option id="SHKNT3" value="6">תלושים</option>>
+       </select>
 </div>
 </div>
     <div class="serviceField">
-        <h5 class="serviceHeader" value="">מחיר ליחידה</h5> 
-        <input id="unitSum" class="serviceInput" type="text" name="unitSum" disabled value="500">
+        <h5 class="serviceHeader" value="">מחיר ליחידה בש"ח</h5> 
+        <div id="unitSum"><input id="unitSum" class="unitSum" type="int" name="unitSum"  disabled></div>
      </div>
      <div class="serviceField">
         <h5 class="serviceHeader">כמות</h5> 
-        <input id="amount" class="serviceInput" type="int" name="amount" value="20">
-     </div>
-     <div class="servicePopupButton">
+        <input id="amount" class="amount" type="int" name="amount" >
+    </div>
+    <div class="servicePopupButton">
         <button type="button" onclick="openRenewServicePopupClose()">ביטול</button>
-        <button  type="button" onclick="sendRenewService()">אישור</button>
+        <button  type="button" onclick="sendRenewService()">המשך לתשלום</button>
 </div>
 </div>
 
@@ -106,20 +99,24 @@
 
 
 
-<div class="moveToPayment"><input type="button" value="מעבר לתשלום" onclick="PaymentDetailsPopup()"></div>
+<!--<div class="moveToPayment"><input type="button" value="מעבר לתשלום" onclick="PaymentDetailsPopup()"></div>-->
 
 <!--=========================Payment Popup =============================-->
 
 <div class="paymentPopup" id="paymentPopup">
     <h2 class="paymentHD" >פרטי תשלום</h2>
     <div class="updatePaymentDetails">
+    <h4 class="paymentHD" >סכום לתשלום</h4>
+    <input id="totalToPay" class="totalToPay" type="float" name="totalToPay" disabled>
+</div>
+    <div class="updatePaymentDetails">
        <h5 class="paymentHeader">שם בעל/ת הכרטיס</h5> 
-       <input class="paymentInput" type="text" id="csName">
+       <input name="csName" class="paymentInput" type="text" id="csName">
     </div>
 
     <div class="updatePaymentDetails">
         <h5 class="paymentHeader">מספר זהות  בעל/ת הכרטיס</h5> 
-        <input class="paymentInput" type="text" name="id">
+        <input name="id" class="paymentInput" type="text" name="id">
      </div>
 
      <div class="updatePaymentDetails">
@@ -162,7 +159,11 @@
         <h5 class="paymentHeader">CVV</h5> 
         <input class="paymentInput" type="int" name="cvv">
      </div>
-    <button type="button" onclick="PaymentDetailsPopupClose()">אישור</button>
+    <!--<button type="button" onclick="PaymentDetailsPopupClose()">אישור</button>-->
+    <div class="paymentPopupButton">
+        <button type="button" onclick="openRenewServicePopupClose()">ביטול</button>
+        <button  type="button" onclick="PaymentDetailsPopupClose()">אישור</button>
+</div>
 </div>
 </div>
 </div>
@@ -202,7 +203,11 @@
 </div>
 
 -->
-
+<div class="popup" id="popup">
+    <img src="./Images/DetailsSaved.png">
+    <h5>התשלום בוצע בהצלחה</h5>
+    <button type="button" onclick="closePopup()">אישור</button>
+</div>
 <!--===============================================================-->
 
 

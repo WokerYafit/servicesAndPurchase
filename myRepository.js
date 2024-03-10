@@ -86,12 +86,13 @@ const UpdateCustomerInMySql = async (req,cnum, cid,cname,chome,cstreet,cpob,ccit
 }
 module.exports.UpdateCustomerInMySql = UpdateCustomerInMySql;
 //===============================================================
-const getPriceForProduct = async (req,cs) => {
+const sendProductForPrice = async (req,prd,unt) => {
     return new Promise(async (resolve, reject) => {
         try {
             let myConnectionPoolToDB = await appPool.connect(); 
             let theResults = await myConnectionPoolToDB.request()
             .input("ProductGiven", mssql.Int(), prd)
+            .input("UnitGiven", mssql.Int(), unt)
             .execute('getPrices')
 
             resolve(theResults);
@@ -102,4 +103,45 @@ const getPriceForProduct = async (req,cs) => {
         }
     })
 }
-module.exports.getPriceForProduct = getPriceForProduct;
+module.exports.sendProductForPrice = sendProductForPrice;
+//===============================================================
+const CalculateTotalPrise = async (req,prd,unt,amt) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let myConnectionPoolToDB = await appPool.connect(); 
+            let theResults = await myConnectionPoolToDB.request()
+            .input("ProductGiven", mssql.Int(), prd)
+            .input("UnitGiven", mssql.Int(), unt)
+            .input("AmountGiven", mssql.Int(), amt)
+            .execute('PriceCalculate')
+
+            resolve(theResults);
+        }
+        catch (err) {
+            console.error('ERROR SENDING SP TO DB: ', err);
+            reject('ERROR SENDING SP TO DB: ', err);
+        }
+    })
+}
+module.exports.CalculateTotalPrise = CalculateTotalPrise;
+//===============================================================
+
+const UpdateServiceInMySql = async (req,cnum, mdl,sum,amt) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let myConnectionPoolToDB = await appPool.connect(); 
+            let theResults = await myConnectionPoolToDB.request()
+            .input("customerNumber", mssql.Int(), cnum)  
+            .input("ModuleNum", mssql.Int(), mdl)    
+            .input("AmountService",mssql.Int(), amt) 
+            .execute('updateCustomersAndService')
+
+            resolve(theResults);
+        }
+        catch (err) {
+            console.error('ERROR SENDING SP TO DB: ', err);
+            reject('ERROR SENDING SP TO DB: ', err);
+        }
+    })
+}
+module.exports.UpdateServiceInMySql = UpdateServiceInMySql;

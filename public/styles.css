@@ -23,6 +23,25 @@
 }
 
 
+#unitSum{
+direction: rtl;
+width: 100px;
+margin-top: -5px;
+}
+
+#displayProductName{
+    color: #000;
+}
+
+.totalToPay{
+    border: 0cap;
+    font-weight: bold;
+    color: darkblue;
+    font-size: 16px;
+    direction: ltr;
+    text-align: right;
+    padding-left: 50px;
+}
 
 
 
@@ -62,6 +81,7 @@ body{
 #tmlLogo{
    padding-left: 1%; 
    padding-bottom: 5%;
+   
    width: 23%;
    border-bottom: 10px;
 }
@@ -241,6 +261,7 @@ border: 1px darkblue;
 .servicesTable{
 padding-right: 5%;
 direction: rtl;
+padding-bottom: 60px;
 
 }
 .checkbox{
@@ -362,7 +383,7 @@ img:hover {
 .paymentHD{
     color: darkblue;
     padding-top: 10px;
-    padding-bottom: 20px;    
+    padding-bottom: 10px;    
 }
 .paymentHeader input{
     text-align: right;
@@ -374,13 +395,13 @@ box-sizing: 100px;
 
 .paymentPopup{
     width: 450px;
-    height: 330px;
+    height: 340px;
     text-align: right;
     background: #fff;
     border-radius: 6px;
     position: absolute;
-    top: 420px;
-    left: 200px;
+    top: 550px;
+    left: 50%;
     transform: translate(-25%,-25%);
     text-align: center;
     color: #333;
@@ -407,7 +428,7 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 .paymentPopup button{
     width: 229px;
     height: 30px;
-    margin-top: 6%;
+    margin-top: 2%;
     margin-left: auto;
     padding: 0px 0;
    color: aliceblue;
@@ -419,6 +440,24 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     width: 60px;
     justify-content: center;
     text-align: center;
+}
+    .serviceHD{
+        display: flex;
+        text-align: center;
+        color: darkblue;
+        padding: 5%;
+        padding-right: 65px;
+        }
+.serviceCheckbox checkbox{
+    display: flex;
+    justify-content: center;
+ 
+}
+.column0{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+ 
 }
 /* ==================UpdateDetails.html====================*/
 .updateNavigator{
@@ -536,31 +575,25 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 
             }
 .backgroundCustomerPage{
-    background: #fff;
+    background: #fff;;
 }
   .backgroundPopupOpen{
-background: rgb(255, 255, 255);
+background: rgba(252, 249, 249, 0.874);
 display: block;
 
     }
     .inputDetails input{
         background: #fff;
     }
-
-.backgroundPopupOpen{
-background: rgb(255, 255, 255);
-display: block;
-
-  }
     
 
   .servicePopup{
     width: 380px;
-    height: 320px;
+    height: 300px;
     background: #fff;
     border-radius: 6px;
     position: absolute;
-    top: 65%;
+    top: 550px;
     left: 50%;
     transform: translate(-25%,-25%);
     text-align: center;
@@ -627,76 +660,25 @@ margin: 5px 0 10px;
     padding-left: 3%;
 }
 
+.paymentPopup button{
+    display: flex;
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding: 0px 0;
+   color: aliceblue;
+   background: midnightblue;
+   justify-content: space-evenly;
+   padding-bottom: 5px;
 
-/*
+}
+.paymentPopupButton{
+    display: flex;
+    justify-content: space-evenly;
+    width: 350px;
+    padding-top: 1%;
+    padding-left: 10px;
+    padding-bottom: 5px;
 
-  #rows,
-  #columns {
-  padding: 10px;
-  font-size: 16px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  }
-  
-  #rows:focus,
-  #columns:focus{
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
-  }
-  
-  button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  }
-  
-  button:hover {
-  background-color: #3e8e41;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  .header-input {
-    width: 100%;
-    box-sizing: border-box;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    text-transform: uppercase;
-  }
-  
-  #myTable{
-    margin-top: 30px;
-  }
-  
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .editable-cell {
-    background-color: #f2f2f2;
-    outline: none
-  }
-  
-  /* Chrome, Safari, Edge, Opera */
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-  }
-  
-  /* Firefox */
-  input[type=number] {
-  -moz-appearance: textfield;
-  }
+}
